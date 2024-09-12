@@ -17,15 +17,24 @@ module.exports = {
             },
             {
                 test: /\.js$/,
-                use: [{loader: 'babel-loader'}],
+                use: [{ loader: 'babel-loader' }],
                 include: [
                     path.join(__dirname, 'src'),
                 ]
             },
             {
                 test: /\.css$/,
-                use: [ 'style-loader', 'css-loader' ]
+                use: ['style-loader', 'css-loader']
             },
+            {
+                test: /\.less$/i,
+                use: [
+                    // compiles Less to CSS
+                    "style-loader",
+                    "css-loader",
+                    "less-loader",
+                ],
+            }
         ]
     },
     plugins: [

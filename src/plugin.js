@@ -1,9 +1,6 @@
 /* global kiwi:true */
+import NicklistUserExt from './components/NicklistUserExt.vue'
 
-import NicklistUser from './components/NicklistUser.vue'
-
-kkiwi.plugin('NicklistUser', function(kiwi, log) {
-    kiwi.replaceModule('components/NicklistUser', {
-        template: NicklistUser
-    });
+kiwi.plugin('NicklistUser', function (kiwi, log) {
+    kiwi.replaceModule('components/NicklistUser', NicklistUserExt);
 });
